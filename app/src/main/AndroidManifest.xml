@@ -10,9 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".view.CalcularActivity"></activity>
-        <activity android:name=".view.SplashActivity" />
+
         <activity android:name=".view.InicialActivity" />
-        <activity android:name=".view.CadastroActivity">
+        <activity android:name=".view.CadastroActivity"/>
+        <activity android:name=".view.SplashActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

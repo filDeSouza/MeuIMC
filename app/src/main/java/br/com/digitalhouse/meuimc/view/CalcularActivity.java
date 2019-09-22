@@ -1,87 +1,55 @@
 package br.com.digitalhouse.meuimc.view;
 
-import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.lifecycle.ReportFragment;
 
-import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
-
 import br.com.digitalhouse.meuimc.interfaces.Comunicador;
 import br.com.digitalhouse.meuimc.model.Operacional;
 import br.com.digitalhouse.meuimc.R;
 
-public class CalcularActivity extends Fragment {
+public class CalcularActivity extends AppCompatActivity implements Comunicador {
+    public static final String SO_KEY = "SO";
 
-    private Comunicador comunicador;
-    private Button btnCalculo;
-    private Button btnInformacao;
-    private Button btnReiniciar;
 
     @Override
-    public void onAttach(@NonNull Context context) {
-        super.onAttach(context);
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_calcular);
 
-        try {
-            comunicador = (Comunicador) context;
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        replaceFragment(R.id.containerDois, new BotoesFragment());
     }
 
-
-        @Override
-        public View onCreateView (LayoutInflater inflater, ViewGroup container,
-                Bundle savedInstanceState){
-            // Inflate the layout for this fragment
-            View view = inflater.inflate(R.layout.activity_calcular, container, false);
-
-
-            initView(view);
-
-            btnCalculo.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-
-                    //Criando o Objeto
-                    Operacional calculo = new Operacional(R.drawable.icon, "Informaçoes do imc implementar");
-
-                    comunicador.receberMensagen(calculo);
-
-                }
-            });
-
-            btnInformacao.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Operacional informacao = new Operacional(R.mipmap.tabela, "IMC significa Índice de Massa Corporal e trata-se de uma medida do peso de cada pessoa, sendo uma relação entre a massa da pessoa e a sua altura. ... Para determinar o IMC, basta dividir o peso do indivíduo (massa) pela sua altura ao quadrado. A massa deve ser definida em quilogramas (kg) e a altura em metros.");
-
-                    comunicador.receberMensagen(informacao);
-                }
-            });
-
-            btnReiniciar.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    startActivity(new Intent(CalcularActivity.this, InicialActivity.class));
-                }
-            });
-
-            return view;
-
-
-        }
-
-        public void initView (View view){
-            btnCalculo = view.findViewById(R.id.botaoCalcular);
-            btnInformacao = view.findViewById(R.id.botaoInformacoes);
-            btnReiniciar = view.findViewById(R.id.botaoReiniciar);
-        }
+    @Override
+    public void receberMensagen(Operacional operacional) {
+        setBundleToFragment(operacional, SO_KEY);
 
     }
 
+    private void replaceFragment (int container, Fragment fragment){
+        FragmentManager manager = getSupportFragmentManager();
+        FragmentTransaction transaction = manager.beginTransaction();
+        transaction.replace(container, fragment);
+        transaction.commit();
+    }
+
+
+    private void setBundleToFragment(Operacional so, String CHAVE){
+        Bundle bundle = new Bundle();
+        bundle.putParcelable(CHAVE, so);
+
+        Fragment InformacoesFragment = new InformacoesFragment();
+        InformacoesFragment.setArguments(bundle);
+
+        replaceFragment(R.id.containerUm, InformacoesFragment);
+    }
+
+    @Override
+    public void onPointerCaptureChanged(boolean hasCapture) {
+
+    }
+}
 

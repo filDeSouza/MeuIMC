@@ -4,5 +4,5 @@ import br.com.digitalhouse.meuimc.model.Operacional;
 
 public interface Comunicador {
 
-    public void receberMensagen(Operacional sistema);
+    public void receberMensagen(Operacional operacional);
 }

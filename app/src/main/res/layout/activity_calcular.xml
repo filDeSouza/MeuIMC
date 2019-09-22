@@ -5,66 +5,45 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".view.CalcularActivity"
-    android:background="#65C7D0">
+    >
+
 
     <FrameLayout
 
         android:id="@+id/containerUm"
-        android:layout_width="385dp"
-        android:layout_height="466dp"
-        android:layout_marginTop="20dp"
-        android:background="#00a8e0"
+        android:layout_width="390dp"
+        android:layout_height="406dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@color/azulanil"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.328"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
     <FrameLayout
 
         android:id="@+id/containerDois"
-        android:layout_width="321dp"
-        android:layout_height="164dp"
+        android:layout_width="324dp"
+        android:layout_height="107dp"
         android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/containerUm"/>
+        app:layout_constraintTop_toBottomOf="@+id/containerUm" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton"
+        android:id="@+id/botaoReiniciar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:clickable="true"
         android:src="@android:drawable/ic_input_add"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/containerDois" />
+        app:layout_constraintTop_toBottomOf="@+id/containerDois"
+        app:layout_constraintVertical_bias="0.076" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="232dp"
-        android:src="@drawable/esportes"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="214dp"
-        android:layout_height="142dp"
-        android:layout_marginStart="96dp"
-        android:layout_marginLeft="96dp"
-        android:layout_marginTop="116dp"
-        android:layout_marginEnd="96dp"
-        android:layout_marginRight="96dp"
-        android:gravity="center"
-        android:text="Meu IMC"
-        android:textSize="60sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-  
 </androidx.constraintlayout.widget.ConstraintLayout>

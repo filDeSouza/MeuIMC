@@ -6,8 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".view.BotoesFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-
 
     <Button
         android:id="@+id/botaoCalcular"
@@ -16,7 +14,11 @@
         android:layout_marginStart="75dp"
         android:layout_marginLeft="75dp"
         android:layout_marginTop="40dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
         android:text="Calcular"
+        android:background="@color/azulanil"
+        app:layout_constraintEnd_toStartOf="@+id/botaoInformar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -24,11 +26,15 @@
         android:id="@+id/botaoInformar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
         android:layout_marginTop="40dp"
         android:layout_marginEnd="75dp"
         android:layout_marginRight="75dp"
         android:text="Informar"
+        android:background="@color/azulanil"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/botaoCalcular"
         app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
