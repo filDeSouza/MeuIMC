@@ -1,4 +1,4 @@
-package br.com.digitalhouse.meuimc.view;
+package br.com.digitalhouse.meuimc.fragments;
 
 
 import android.os.Bundle;

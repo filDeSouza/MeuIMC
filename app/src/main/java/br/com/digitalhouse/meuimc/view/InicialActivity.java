@@ -44,9 +44,9 @@ public class InicialActivity extends AppCompatActivity {
             String ola = "Seja bem vindo(a) " + bundle.getString(NOME_KEY) + "! Esse é um aplicativo que\n" +
                     "te ajuda a saber e calcular o seu Indice de Massa \n" +
                     "Corporal";
-            String idade = bundle.getString(IDADE_KEY);
-            String peso = bundle.getString(PESO_KEY);
-            String altura = bundle.getString(ALTURA_KEY);
+            String idade = String.valueOf(bundle.getInt(IDADE_KEY));
+            String peso = String.valueOf(bundle.getDouble(PESO_KEY));
+            String altura = String.valueOf(bundle.getDouble(ALTURA_KEY));
 
             textoOla.setText(ola);
             textoIdade.setText(idade);
@@ -60,7 +60,15 @@ public class InicialActivity extends AppCompatActivity {
         buttonAvancar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(InicialActivity.this, CalcularActivity.class));
+                Intent intent = new Intent(InicialActivity.this, InicialActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("NOME", bundle.getString(NOME_KEY));
+                bundle.putInt("IDADE", String.valueOf(bundle.getInt(IDADE_KEY));
+                bundle.putDouble("PESO", String.valueOf(bundle.getDouble(PESO_KEY));
+                bundle.putDouble("ALTURA", String.valueOf(bundle.getDouble(ALTURA_KEY));
+
+                intent.putExtras(bundle);
+                startActivity(intent);
             }
         });
 
