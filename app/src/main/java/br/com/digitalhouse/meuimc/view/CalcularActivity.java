@@ -6,12 +6,19 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ReportFragment;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+
 import br.com.digitalhouse.meuimc.interfaces.Comunicador;
 import br.com.digitalhouse.meuimc.model.Operacional;
 import br.com.digitalhouse.meuimc.R;
 
 public class CalcularActivity extends AppCompatActivity implements Comunicador {
+    private Button btnReiniciar;
+
+
     public static final String SO_KEY = "SO";
 
 
@@ -21,6 +28,7 @@ public class CalcularActivity extends AppCompatActivity implements Comunicador {
         setContentView(R.layout.activity_calcular);
 
         replaceFragment(R.id.containerDois, new BotoesFragment());
+
     }
 
     @Override
@@ -51,5 +59,7 @@ public class CalcularActivity extends AppCompatActivity implements Comunicador {
     public void onPointerCaptureChanged(boolean hasCapture) {
 
     }
+
+
 }
 

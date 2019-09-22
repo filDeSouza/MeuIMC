@@ -36,5 +36,5 @@
         app:layout_constraintVertical_bias="0.502"
         app:srcCompat="@mipmap/meuimc_logohd_bresil" />
 
-   
+
 </androidx.constraintlayout.widget.ConstraintLayout>
