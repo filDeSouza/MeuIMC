@@ -67,7 +67,7 @@ public class CalcularActivity extends Fragment {
             btnReiniciar.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    startActivity(new Intent(CalcularActivity.this, InicialActivity.class));
+                    //startActivity(new Intent(CalcularActivity.this, InicialActivity.class));
                 }
             });
 
@@ -78,8 +78,8 @@ public class CalcularActivity extends Fragment {
 
         public void initView (View view){
             btnCalculo = view.findViewById(R.id.botaoCalcular);
-            btnInformacao = view.findViewById(R.id.botaoInformacoes);
-            btnReiniciar = view.findViewById(R.id.botaoReiniciar);
+            //btnInformacao = view.findViewById(R.id.botaoInformacoes);
+            //btnReiniciar = view.findViewById(R.id.botaoReiniciar);
         }
 
     }
