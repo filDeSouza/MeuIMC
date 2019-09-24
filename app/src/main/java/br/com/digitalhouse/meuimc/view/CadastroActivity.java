@@ -41,7 +41,7 @@ public class CadastroActivity extends AppCompatActivity {
                 double peso = Double.parseDouble(lPeso.getEditText().getText().toString());
                 double altura = Double.parseDouble(lAltura.getEditText().getText().toString());
 
-                if(!nome.isEmpty() || idade!=0 || peso!=0 || altura!=0){
+                if(!nome.isEmpty() && idade!=0 && peso!=0 && altura!=0){
                 Intent intent = new Intent(CadastroActivity.this, InicialActivity.class);
                 Bundle bundle = new Bundle();
                 bundle.putString("NOME", nome);

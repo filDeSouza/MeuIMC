@@ -11,23 +11,37 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 import br.com.digitalhouse.meuimc.interfaces.Comunicador;
 import br.com.digitalhouse.meuimc.model.Operacional;
 import br.com.digitalhouse.meuimc.R;
 
 public class CalcularActivity extends AppCompatActivity implements Comunicador {
-    private Button btnReiniciar;
+    private FloatingActionButton btnReiniciar;
 
 
     public static final String SO_KEY = "SO";
 
 
-    @Override
+            @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calcular);
 
+        btnReiniciar = findViewById(R.id.botaoReiniciar);
+
+                btnReiniciar.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        startActivity(new Intent(CalcularActivity.this,CadastroActivity.class));
+
+                    }
+
+                });
+
         replaceFragment(R.id.containerDois, new BotoesFragment());
+
 
     }
 
@@ -60,6 +74,4 @@ public class CalcularActivity extends AppCompatActivity implements Comunicador {
 
     }
 
-
 }
-

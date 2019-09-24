@@ -28,8 +28,9 @@ public class BotoesFragment extends Fragment  {
     private Button btnCalculo;
     private Button btnInforma;
 
+
     public BotoesFragment() {
-        // Required empty public constructor
+
     }
 
     @Override
@@ -42,11 +43,11 @@ public class BotoesFragment extends Fragment  {
             e.printStackTrace();
         }
     }
-    
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+
         View view = inflater.inflate(R.layout.fragment_botoes, container, false);
 
         initView(view);
