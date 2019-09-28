@@ -63,9 +63,9 @@ public class InicialActivity extends AppCompatActivity {
                 Intent intent = new Intent(InicialActivity.this, CalcularActivity.class);
                 Bundle bundle = new Bundle();
                 bundle.putString("NOME", bundle.getString(NOME_KEY));
-                bundle.putInt("IDADE", Integer.parseInt(IDADE_KEY));
-                bundle.putDouble("PESO", Double.parseDouble(PESO_KEY));
-                bundle.putDouble("ALTURA", Double.parseDouble(ALTURA_KEY));
+                bundle.putInt("IDADE",  bundle.getInt(IDADE_KEY));
+                bundle.putDouble("PESO", bundle.getDouble(PESO_KEY));
+                bundle.putDouble("ALTURA", bundle.getDouble(ALTURA_KEY));
 
 
                 intent.putExtras(bundle);

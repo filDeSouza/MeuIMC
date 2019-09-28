@@ -69,9 +69,5 @@ public class CalcularActivity extends AppCompatActivity implements Comunicador {
         replaceFragment(R.id.containerUm, InformacoesFragment);
     }
 
-    @Override
-    public void onPointerCaptureChanged(boolean hasCapture) {
-
-    }
 
 }
